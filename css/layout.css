@@ -7,6 +7,44 @@
 .row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.row-head {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.img-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  box-shadow: black;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 15em;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  box-shadow: black;
+}
+
+.column-half {
+  flex-direction: row;
 }
 
 .column-full,
@@ -22,5 +60,19 @@
   .column-full,
   .column-half {
     width: 50%;
+  }
+
+  .button-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20em;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    box-shadow: black;
   }
 }

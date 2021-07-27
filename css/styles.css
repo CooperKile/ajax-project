@@ -2,6 +2,12 @@ body {
   background-color: #222831;
 }
 
+img {
+  height: 90%;
+  width: 100%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 .head-container {
   background-color: #f05454;
 }
@@ -13,12 +19,23 @@ body {
   margin-left: 1rem;
 }
 
-.img-row {
-  display: flex;
-  align-content: center;
-  justify-content: center;
+.chevron {
+  color: white;
+  font-size: 2rem;
+  font-weight: lighter;
 }
 
-img {
-  width: 100%;
+.arrow {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  background-color: #30475e;
+  border-style: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  height: 3rem;
+  width: 7rem;
+}
+
+.arrow:hover {
+  cursor: pointer;
 }

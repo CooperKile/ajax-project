@@ -1,0 +1,14 @@
+body {
+  background-color: #222831;
+}
+
+.head-container {
+  background-color: #f05454;
+}
+
+.title {
+  font-family: 'Proza Libre', sans-serif;
+  color: white;
+  font-weight: 400;
+  margin-left: 1rem;
+}

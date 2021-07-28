@@ -2,11 +2,14 @@ var $img = document.querySelector('img');
 var $left = document.querySelector('.left');
 var $right = document.querySelector('.right');
 var $star = document.querySelector('.rate');
+var $modal = document.querySelector('.overlay');
+var $cancel = document.querySelector('.cancel');
 var picture = 0;
 
 $right.addEventListener('click', nextImg);
 $left.addEventListener('click', prevImg);
-$star.addEventListener('click', rateImg);
+$star.addEventListener('click', openRate);
+$modal.addEventListener('click', rateModal);
 
 function getImages() {
   var xhr = new XMLHttpRequest();
@@ -34,6 +37,12 @@ function prevImg(event) {
   $img.setAttribute('src', data.response[picture].download_url);
 }
 
-function rateImg(event) {
-  // console.log('this was reached');
+function openRate(event) {
+  $modal.setAttribute('class', 'overlay');
+}
+
+function rateModal(event) {
+  if (event.target === $cancel) {
+    $modal.setAttribute('class', 'hidden');
+  }
 }

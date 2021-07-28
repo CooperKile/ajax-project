@@ -18,18 +18,16 @@ function getImages() {
 getImages();
 
 function nextImg(event) {
-  if (picture === 29) {
+  if (picture === data.response.length - 1) {
     picture = -1;
   }
   picture = picture + 1;
   $img.setAttribute('src', data.response[picture].download_url);
-
 }
 function prevImg(event) {
   if (picture === 0) {
-    picture = 30;
+    picture = data.response.length;
   }
   picture = picture - 1;
   $img.setAttribute('src', data.response[picture].download_url);
-
 }

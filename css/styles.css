@@ -1,0 +1,35 @@
+body {
+  background-color: #222831;
+}
+
+.head-container {
+  background-color: #f05454;
+}
+
+.title {
+  font-family: 'Proza Libre', sans-serif;
+  color: white;
+  font-weight: 400;
+  margin-left: 1rem;
+}
+
+.chevron {
+  color: white;
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+.arrow {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  background-color: #30475e;
+  border-style: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  height: 3rem;
+  width: 7rem;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}

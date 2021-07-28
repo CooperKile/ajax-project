@@ -7,11 +7,10 @@ var picture = 0;
 $right.addEventListener('click', nextImg);
 $left.addEventListener('click', prevImg);
 xhr.addEventListener('load', load);
+
 xhr.open('GET', 'https://picsum.photos/v2/list');
 xhr.responseType = 'json';
 function load() {
-  // console.log(xhr.status);
-  // console.log(xhr.response);
   data.response = xhr.response;
 }
 xhr.send();

@@ -19,6 +19,11 @@ body {
   font-weight: lighter;
 }
 
+.star {
+  color: white;
+  font-size: 1.7rem;
+}
+
 .arrow {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -30,6 +35,24 @@ body {
   width: 7rem;
 }
 
+.rate {
+  background-color: #30475e;
+  border-style: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  height: 3rem;
+  width: 3rem;
+}
+
+.rate-review-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .arrow:hover {
+  cursor: pointer;
+}
+
+.rate:hover {
   cursor: pointer;
 }

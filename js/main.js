@@ -1,10 +1,12 @@
 var $img = document.querySelector('img');
 var $left = document.querySelector('.left');
 var $right = document.querySelector('.right');
+var $star = document.querySelector('.rate');
 var picture = 0;
 
 $right.addEventListener('click', nextImg);
 $left.addEventListener('click', prevImg);
+$star.addEventListener('click', rateImg);
 
 function getImages() {
   var xhr = new XMLHttpRequest();
@@ -30,4 +32,8 @@ function prevImg(event) {
   }
   picture = picture - 1;
   $img.setAttribute('src', data.response[picture].download_url);
+}
+
+function rateImg(event) {
+  // console.log('this was reached');
 }

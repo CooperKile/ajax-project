@@ -5,14 +5,17 @@ var $star = document.querySelector('.rate');
 var $modal = document.querySelector('.overlay');
 var $cancel = document.querySelector('.cancel');
 var $rateRow = document.querySelector('.star-row');
-var $rateStar = document.querySelectorAll('.fa-star');
+var $rateStar = document.querySelectorAll('.modal-star');
+var $submitRate = document.querySelector('.submit');
+var $buttonRow = document.querySelector('.modal-button-row');
 var picture = 0;
 
 $right.addEventListener('click', nextImg);
 $left.addEventListener('click', prevImg);
 $star.addEventListener('click', openRate);
-$modal.addEventListener('click', rateModal);
-$rateRow.addEventListener('click', ratePhoto);
+$buttonRow.addEventListener('click', closeRate);
+$rateRow.addEventListener('click', rateStars);
+// $modal.addEventListener('click', ratePhoto);
 
 function getImages() {
   var xhr = new XMLHttpRequest();
@@ -44,23 +47,34 @@ function openRate(event) {
   $modal.setAttribute('class', 'overlay');
 }
 
-function rateModal(event) {
-  if (event.target === $cancel) {
+function closeRate(string) {
+  if (event.target === $cancel || $submitRate) {
     $modal.setAttribute('class', 'overlay hidden');
+  }
+  for (var i = 0; i < $rateStar.length; i++) {
+    $rateStar[i].setAttribute('class', 'modal-star star far fa-star');
   }
 }
 
-function ratePhoto(event) {
+function rateStars(event) {
   var rate = event.target.getAttribute('data-value');
   var rateToNumber = Number(rate);
   for (var i = 0; i < $rateStar.length; i++) {
-    $rateStar[i].setAttribute('class', 'modal-star star fas fa-star');
+    $rateStar[i].setAttribute('class', 'modal-star star far fa-star');
   }
-  for (var j = 0; j < rateToNumber; j++) {
-    $rateStar[j].setAttribute('class', 'modal-star star far fa-star');
+  for (var j = 0; j <= rateToNumber; j++) {
+    $rateStar[j].setAttribute('class', 'modal-star star fas fa-star');
   }
+  ratePhoto(rate, picture);
 }
 
-// if (rateToNumber === i) {
-//   $rateStar[i + 1].setAttribute('class', 'modal-star star fas fa-star');
-// }
+function ratePhoto(rate, picture) {
+  var newRating = {
+    rating: rate,
+    picture: picture
+  };
+  // console.log(newRating);
+  // newRating.rateId = data.nextRateId;
+  // data.nextRateId++;
+  data.ratings.push(newRating);
+}

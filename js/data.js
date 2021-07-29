@@ -1,7 +1,9 @@
 /* exported data */
 var data = {
   response: null,
-  rating: []
+  ratings: [],
+  reviews: [],
+  nextRateId: 1
 };
 
 window.addEventListener('beforeunload', storeData);

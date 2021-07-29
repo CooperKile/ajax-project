@@ -4,12 +4,15 @@ var $right = document.querySelector('.right');
 var $star = document.querySelector('.rate');
 var $modal = document.querySelector('.overlay');
 var $cancel = document.querySelector('.cancel');
+var $rateRow = document.querySelector('.star-row');
+var $rateStar = document.querySelectorAll('.fa-star');
 var picture = 0;
 
 $right.addEventListener('click', nextImg);
 $left.addEventListener('click', prevImg);
 $star.addEventListener('click', openRate);
 $modal.addEventListener('click', rateModal);
+$rateRow.addEventListener('click', ratePhoto);
 
 function getImages() {
   var xhr = new XMLHttpRequest();
@@ -43,6 +46,21 @@ function openRate(event) {
 
 function rateModal(event) {
   if (event.target === $cancel) {
-    $modal.setAttribute('class', 'hidden');
+    $modal.setAttribute('class', 'overlay hidden');
   }
 }
+
+function ratePhoto(event) {
+  var rate = event.target.getAttribute('data-value');
+  var rateToNumber = Number(rate);
+  for (var i = 0; i < $rateStar.length; i++) {
+    $rateStar[i].setAttribute('class', 'modal-star star fas fa-star');
+  }
+  for (var j = 0; j < rateToNumber; j++) {
+    $rateStar[j].setAttribute('class', 'modal-star star far fa-star');
+  }
+}
+
+// if (rateToNumber === i) {
+//   $rateStar[i + 1].setAttribute('class', 'modal-star star fas fa-star');
+// }

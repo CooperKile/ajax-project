@@ -55,7 +55,7 @@ body {
 
 .rate-modal {
   background-color: #222831;
-  width: 30em;
+  width: 25em;
   max-width: 100%;
   height: 15em;
   border-radius: 5px;
@@ -84,7 +84,6 @@ body {
 }
 
 .modal-button-row {
-  padding: 2rem;
   display: flex;
   justify-content: space-between;
 }

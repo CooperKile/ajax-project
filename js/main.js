@@ -10,14 +10,24 @@ var $submitRate = document.querySelector('.submit');
 var $buttonRow = document.querySelector('.modal-button-row');
 var $reviewButton = document.querySelector('.review');
 var $reviewModal = document.querySelector('.overlay-review');
+var $reviewButtonRow = document.querySelector('.review-button-row');
+// var $submitReview = document.querySelector('.review-submit');
+var $reviewCancel = document.querySelector('.review-cancel');
+var title = document.querySelector('.title-area');
+var text = document.querySelector('.review-area');
+var $reviewForm = document.getElementById('review-form');
+// console.log($reviewForm);
 var picture = 0;
 
 $right.addEventListener('click', nextImg);
 $left.addEventListener('click', prevImg);
 $star.addEventListener('click', openRate);
 $buttonRow.addEventListener('click', closeRate);
+$reviewButtonRow.addEventListener('click', closeReview);
 $rateRow.addEventListener('click', rateStars);
 $reviewButton.addEventListener('click', openReview);
+$reviewForm.addEventListener('submit', reviewPhoto);
+
 function getImages() {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://picsum.photos/v2/list');
@@ -49,7 +59,7 @@ function openRate(event) {
 }
 
 function openReview(event) {
-  $reviewModal.setAttribute('class', 'overlay-review');
+  $reviewModal.setAttribute('class', 'overlay');
 }
 
 function closeRate(string) {
@@ -66,6 +76,12 @@ function closeRate(string) {
   }
   for (var i = 0; i < $rateStar.length; i++) {
     $rateStar[i].setAttribute('class', 'modal-star star far fa-star');
+  }
+}
+
+function closeReview(string) {
+  if (event.target === $reviewCancel) {
+    $reviewModal.setAttribute('class', 'overlay hidden');
   }
 }
 
@@ -90,4 +106,18 @@ function ratePhoto() {
   data.ratings.push(newRating);
   newRating.rateId = data.nextRateId;
   data.nextRateId++;
+}
+
+function reviewPhoto(event) {
+  event.preventDefault();
+  var newReview = {
+    title: title.value,
+    review: text.value,
+    picture: picture
+  };
+  newReview.reviewId = data.nextReviewId;
+  data.nextReviewId++;
+  data.reviews.push(newReview);
+  $reviewForm.reset($reviewForm);
+  $reviewModal.setAttribute('class', 'overlay hidden');
 }

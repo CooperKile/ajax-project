@@ -75,9 +75,8 @@ function rateStars(event) {
   }
   var currentRating = rate;
   var currentPicture = picture;
-  data.currentRating.push(currentRating);
-  data.currentPicture.push(currentPicture);
-
+  data.currentRating = currentRating;
+  data.currentPicture = currentPicture;
 }
 
 function ratePhoto() {

@@ -10,6 +10,15 @@ body {
   background-color: #f05454;
 }
 
+.user {
+  display: flex;
+  align-content: center;
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  margin-right: 2rem;
+  color: white;
+}
+
 .title {
   font-family: 'Proza Libre', sans-serif;
   color: white;

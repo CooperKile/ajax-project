@@ -10,6 +10,7 @@ body {
   background-color: #f05454;
 }
 
+.main-icon,
 .user {
   display: flex;
   align-content: center;
@@ -206,5 +207,13 @@ body {
 }
 
 .review-button:hover {
+  cursor: pointer;
+}
+
+.user:hover {
+  cursor: pointer;
+}
+
+.main-icon:hover {
   cursor: pointer;
 }

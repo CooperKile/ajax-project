@@ -15,7 +15,6 @@ $left.addEventListener('click', prevImg);
 $star.addEventListener('click', openRate);
 $buttonRow.addEventListener('click', closeRate);
 $rateRow.addEventListener('click', rateStars);
-// $modal.addEventListener('click', ratePhoto);
 
 function getImages() {
   var xhr = new XMLHttpRequest();
@@ -73,16 +72,11 @@ function rateStars(event) {
   for (var j = 0; j <= rateToNumber; j++) {
     $rateStar[j].setAttribute('class', 'modal-star star fas fa-star');
   }
-  var currentRating = rate;
-  var currentPicture = picture;
-  data.currentRating = currentRating;
-  data.currentPicture = currentPicture;
+  data.currentRating = rate;
+  data.currentPicture = picture;
 }
 
 function ratePhoto() {
-  if (event.target !== $submitRate) {
-    return;
-  }
   var newRating = {
     rating: data.currentRating,
     picture: data.currentPicture

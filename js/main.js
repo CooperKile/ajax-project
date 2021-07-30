@@ -11,12 +11,10 @@ var $buttonRow = document.querySelector('.modal-button-row');
 var $reviewButton = document.querySelector('.review');
 var $reviewModal = document.querySelector('.overlay-review');
 var $reviewButtonRow = document.querySelector('.review-button-row');
-// var $submitReview = document.querySelector('.review-submit');
 var $reviewCancel = document.querySelector('.review-cancel');
 var title = document.querySelector('.title-area');
 var text = document.querySelector('.review-area');
 var $reviewForm = document.getElementById('review-form');
-// console.log($reviewForm);
 var picture = 0;
 
 $right.addEventListener('click', nextImg);

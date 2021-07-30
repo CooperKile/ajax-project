@@ -8,6 +8,8 @@ var $rateRow = document.querySelector('.star-row');
 var $rateStar = document.querySelectorAll('.modal-star');
 var $submitRate = document.querySelector('.submit');
 var $buttonRow = document.querySelector('.modal-button-row');
+var $reviewButton = document.querySelector('.review');
+var $reviewModal = document.querySelector('.overlay-review');
 var picture = 0;
 
 $right.addEventListener('click', nextImg);
@@ -15,7 +17,7 @@ $left.addEventListener('click', prevImg);
 $star.addEventListener('click', openRate);
 $buttonRow.addEventListener('click', closeRate);
 $rateRow.addEventListener('click', rateStars);
-
+$reviewButton.addEventListener('click', openReview);
 function getImages() {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://picsum.photos/v2/list');
@@ -44,6 +46,10 @@ function prevImg(event) {
 
 function openRate(event) {
   $modal.setAttribute('class', 'overlay');
+}
+
+function openReview(event) {
+  $reviewModal.setAttribute('class', 'overlay-review');
 }
 
 function closeRate(string) {

@@ -46,6 +46,7 @@ body {
   margin-top: 4rem;
 }
 
+.overlay-review,
 .overlay {
   background-color: rgba(83, 83, 83, 0.4);
   display: flex;

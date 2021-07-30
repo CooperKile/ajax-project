@@ -1,3 +1,4 @@
+
 .container {
   max-width: 575px;
   margin: 0 auto;
@@ -9,6 +10,12 @@ img {
   height: auto;
   width: 100%;
   max-height: 18em;
+}
+
+.modal-button-row {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .row {
@@ -23,8 +30,13 @@ img {
 }
 
 .img-row {
-  margin-top: 10em;
+  margin-top: 5em;
   margin-bottom: 3em;
+}
+
+.rate-review-row {
+  width: 100%;
+  margin-bottom: 1em;
 }
 
 .button-row {
@@ -56,11 +68,11 @@ img {
     object-fit: contain;
     height: auto;
     width: 100%;
-    max-height: 30em;
+    max-height: 25em;
   }
 
   .img-row {
-    margin-top: 8em;
+    margin-top: 2em;
     margin-bottom: 3em;
   }
 
@@ -68,5 +80,12 @@ img {
     display: flex;
     justify-content: center;
     box-shadow: black;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .rate-review-row {
+    width: 90%;
+    margin-bottom: 1em;
   }
 }

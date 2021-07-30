@@ -2,6 +2,10 @@ body {
   background-color: #222831;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .head-container {
   background-color: #f05454;
 }
@@ -19,6 +23,46 @@ body {
   font-weight: lighter;
 }
 
+.star {
+  color: white;
+  font-size: 1.7rem;
+}
+
+.modal-star {
+  color: #f05454;
+  padding: 0.5rem;
+  font-size: 2rem;
+}
+
+.star-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.overlay {
+  background-color: rgba(83, 83, 83, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.rate-modal {
+  background-color: #222831;
+  width: 25em;
+  max-width: 100%;
+  height: 15em;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 .arrow {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -30,6 +74,45 @@ body {
   width: 7rem;
 }
 
+.rate {
+  background-color: #30475e;
+  border-style: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  height: 3rem;
+  width: 3rem;
+}
+
+.modal-button-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-button {
+  background-color: #30475e;
+  border-style: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  height: 3rem;
+  width: 9rem;
+  font-family: 'Proza Libre', sans-serif;
+  font-size: 1rem;
+  color: #f05454;
+}
+
+.rate-review-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .arrow:hover {
+  cursor: pointer;
+}
+
+.rate:hover {
+  cursor: pointer;
+}
+
+.modal-button:hover {
   cursor: pointer;
 }

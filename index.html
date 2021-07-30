@@ -23,7 +23,14 @@
     <div class="img-row">
       <div class="row">
         <div class="column-full">
-          <img src="https://picsum.photos/id/0/5616/3744" alt="">
+          <div class="rate-review-row">
+            <button class="rate">
+              <i class="star far fa-star"></i>
+            </button>
+          </div>
+          <div class="row">
+            <img src="https://picsum.photos/id/0/5616/3744" alt="">
+          </div>
         </div>
       </div>
     </div>
@@ -34,6 +41,21 @@
       <button class="arrow right">
         <i class="chevron fas fa-chevron-right"></i>
       </button>
+    </div>
+    <div class="overlay hidden">
+      <div class="rate-modal">
+        <div class="star-row">
+          <i class="modal-star star far fa-star" data-value="0"></i>
+          <i class="modal-star star far fa-star" data-value="1"></i>
+          <i class="modal-star star far fa-star" data-value="2"></i>
+          <i class="modal-star star far fa-star" data-value="3"></i>
+          <i class="modal-star star far fa-star" data-value="4"></i>
+        </div>
+        <div class="modal-button-row">
+          <button class="modal-button cancel">Cancel</button>
+          <button class="modal-button submit">Submit Rating</button>
+        </div>
+      </div>
     </div>
   </container>
   <main>

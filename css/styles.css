@@ -69,6 +69,40 @@ body {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.review-modal {
+  background-color: #222831;
+  width: 40em;
+  max-width: 100%;
+  height: 23em;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.title-area {
+  height: 2rem;
+}
+
+.input-area {
+  border-style: none;
+  border-radius: 5px;
+  width: 90%;
+  margin-bottom: 1rem;
+  background-color: #30475e;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding-left: 0.5rem;
+}
+
+.h3-review {
+  margin-left: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  font-family: 'Proza Libre', sans-serif;
+  color: white;
+  font-size: 1rem;
+  font-weight: 100;
+}
+
 .arrow {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -104,6 +138,11 @@ body {
   justify-content: space-between;
 }
 
+.review-button-row {
+  display: flex;
+  justify-content: space-between;
+}
+
 .modal-button {
   background-color: #30475e;
   border-style: none;
@@ -114,6 +153,27 @@ body {
   font-family: 'Proza Libre', sans-serif;
   font-size: 1rem;
   color: #f05454;
+}
+
+.review-button {
+  background-color: #30475e;
+  border-style: none;
+  border-radius: 5px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  height: 3rem;
+  width: 9rem;
+  font-family: 'Proza Libre', sans-serif;
+  font-size: 1rem;
+  color: #f05454;
+}
+
+::placeholder {
+  font-family: 'Proza Libre', sans-serif;
+  font-size: 1rem;
+  color: #f05454;
+  opacity: inherit;
 }
 
 .rate-review-row {
@@ -134,5 +194,9 @@ body {
 }
 
 .review:hover {
+  cursor: pointer;
+}
+
+.review-button:hover {
   cursor: pointer;
 }

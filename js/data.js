@@ -2,6 +2,8 @@
 var data = {
   response: null,
   ratings: [],
+  currentRating: null,
+  currentPicture: null,
   reviews: [],
   nextRateId: 1
 };

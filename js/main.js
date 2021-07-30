@@ -48,8 +48,16 @@ function openRate(event) {
 }
 
 function closeRate(string) {
-  if (event.target === $cancel || $submitRate) {
+  if (event.target === $cancel) {
     $modal.setAttribute('class', 'overlay hidden');
+    data.currentPicture = null;
+    data.currentRating = null;
+  }
+  if (event.target === $submitRate) {
+    ratePhoto();
+    $modal.setAttribute('class', 'overlay hidden');
+    data.currentPicture = null;
+    data.currentRating = null;
   }
   for (var i = 0; i < $rateStar.length; i++) {
     $rateStar[i].setAttribute('class', 'modal-star star far fa-star');
@@ -65,16 +73,23 @@ function rateStars(event) {
   for (var j = 0; j <= rateToNumber; j++) {
     $rateStar[j].setAttribute('class', 'modal-star star fas fa-star');
   }
-  ratePhoto(rate, picture);
+  var currentRating = rate;
+  var currentPicture = picture;
+  data.currentRating.push(currentRating);
+  data.currentPicture.push(currentPicture);
+
 }
 
-function ratePhoto(rate, picture) {
+function ratePhoto() {
+  if (event.target !== $submitRate) {
+    return;
+  }
   var newRating = {
-    rating: rate,
-    picture: picture
+    rating: data.currentRating,
+    picture: data.currentPicture
   };
-  // console.log(newRating);
+  // console.log(event.target);
+  data.ratings.push(newRating);
   // newRating.rateId = data.nextRateId;
   // data.nextRateId++;
-  data.ratings.push(newRating);
 }

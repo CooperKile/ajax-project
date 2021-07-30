@@ -87,8 +87,7 @@ function ratePhoto() {
     rating: data.currentRating,
     picture: data.currentPicture
   };
-  // console.log(event.target);
   data.ratings.push(newRating);
-  // newRating.rateId = data.nextRateId;
-  // data.nextRateId++;
+  newRating.rateId = data.nextRateId;
+  data.nextRateId++;
 }

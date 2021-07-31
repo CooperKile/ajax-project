@@ -18,7 +18,8 @@ var $reviewForm = document.getElementById('review-form');
 var $profile = document.querySelector('.user');
 var $mainView = document.querySelector('.main-icon');
 var $dataView = document.querySelectorAll('div[data-view]');
-// var $noReviews = document.querySelector('.no-reviews');
+// var option = document.querySelectorAll('option');
+// var $dropdown = document.querySelector('.dropdown');
 var picture = 0;
 
 $right.addEventListener('click', nextImg);
@@ -31,10 +32,9 @@ $reviewButton.addEventListener('click', openReview);
 $reviewForm.addEventListener('submit', reviewPhoto);
 $profile.addEventListener('click', handleViewSwitch);
 $mainView.addEventListener('click', handleViewSwitch);
-
+// $dropdown.addEventListener('click', profileView);
 function handleViewSwitch(event) {
   var viewName = event.target.getAttribute('data-view');
-  // console.log(viewName);
   switchViews(viewName);
 }
 
@@ -46,11 +46,7 @@ function switchViews(string) {
       $dataView[i].classList.remove('hidden');
       data.view = string;
     }
-    // if (data.reviews.length > 0) {
-    //   $noReviews.setAttribute('class', 'no-reviews hidden');
-    // } else {
-    //   $noReviews.setAttribute('class', 'no-reviews');
-    // }
+
   }
 }
 switchViews(data.view);

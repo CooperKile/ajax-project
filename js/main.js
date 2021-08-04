@@ -18,8 +18,8 @@ var $reviewForm = document.getElementById('review-form');
 var $profile = document.querySelector('.user');
 var $mainView = document.querySelector('.main-icon');
 var $dataView = document.querySelectorAll('div[data-view]');
-// var option = document.querySelectorAll('option');
-// var $dropdown = document.querySelector('.dropdown');
+var option = document.querySelectorAll('option');
+var $dropdown = document.querySelector('.dropdown');
 var picture = 0;
 
 $right.addEventListener('click', nextImg);
@@ -32,7 +32,7 @@ $reviewButton.addEventListener('click', openReview);
 $reviewForm.addEventListener('submit', reviewPhoto);
 $profile.addEventListener('click', handleViewSwitch);
 $mainView.addEventListener('click', handleViewSwitch);
-// $dropdown.addEventListener('click', profileView);
+$dropdown.addEventListener('click', profileView);
 function handleViewSwitch(event) {
   var viewName = event.target.getAttribute('data-view');
   switchViews(viewName);
@@ -50,6 +50,21 @@ function switchViews(string) {
   }
 }
 switchViews(data.view);
+
+function profileView(event) {
+  var noReviews = document.querySelector('.no-reviews');
+  var noRatings = document.querySelector('.no-ratings');
+  for (var i = 0; i < option.length; i++) {
+    // console.log(option[i].value);
+    if (option[i].value === 'reviews') {
+      noRatings.setAttribute('class', 'no-ratings');
+      noReviews.setAttribute('class', 'no-reivews hidden');
+    } else if (option[i].value === 'ratings') {
+      noReviews.setAttribute('class', 'no-reivews');
+      noRatings.setAttribute('class', 'no-ratings hidden');
+    }
+  }
+}
 
 function getImages() {
   var xhr = new XMLHttpRequest();

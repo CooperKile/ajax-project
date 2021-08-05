@@ -70,6 +70,12 @@ function profileView(event) {
   }
 }
 
+// function renderReviews {
+//   var li = document.createElement('li');
+//   li.setAttribute()
+//   return li;
+// }
+
 function getImages() {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://picsum.photos/v2/list');

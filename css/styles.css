@@ -2,6 +2,13 @@ body {
   background-color: #222831;
 }
 
+.review-display,
+.rating {
+  background-color: #30475e;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 .hidden {
   display: none !important;
 }

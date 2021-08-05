@@ -53,12 +53,18 @@ switchViews(data.view);
 function profileView(event) {
   var ratings = document.querySelector('.ratings');
   var reviews = document.querySelector('.reviews');
-  // var noReviews = document.querySelector('.no-reviews');
-  // var noRatings = document.querySelector('.no-ratings');
+  var noReviews = document.querySelector('.no-reviews');
+  var noRatings = document.querySelector('.no-ratings');
   if (event.target.value === 'reviews') {
+    if (data.reviews.length > 0) {
+      noReviews.setAttribute('class', 'no-reviews hidden');
+    }
     reviews.setAttribute('class', 'reviews');
     ratings.setAttribute('class', 'ratings hidden');
   } else if (event.target.value === 'ratings') {
+    if (data.ratings.length > 0) {
+      noRatings.setAttribute('class', 'no-ratings hidden');
+    }
     ratings.setAttribute('class', 'ratings');
     reviews.setAttribute('class', 'reviews hidden');
   }

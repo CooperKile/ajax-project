@@ -6,7 +6,8 @@ var data = {
   currentPicture: null,
   reviews: [],
   nextRateId: 1,
-  nextReviewId: 1
+  nextReviewId: 1,
+  view: 'main-page'
 };
 
 window.addEventListener('beforeunload', storeData);

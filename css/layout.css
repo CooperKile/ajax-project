@@ -11,9 +11,9 @@
 
 .review-display,
 .rating {
-  margin: 2rem;
   height: 20em;
   width: 90%;
+  margin: 2rem;
 }
 
 .review-row,
@@ -84,8 +84,8 @@ img {
   .review-display,
   .rating {
     margin: 2rem;
-    height: 20em;
-    width: 40%;
+    height: 30em;
+    width: 30%;
   }
 
   .review-row,

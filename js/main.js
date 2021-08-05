@@ -19,6 +19,8 @@ var $profile = document.querySelector('.user');
 var $mainView = document.querySelector('.main-icon');
 var $dataView = document.querySelectorAll('div[data-view]');
 var $dropdown = document.querySelector('.dropdown');
+var renderReview = document.querySelector('.review-row');
+var renderRating = document.querySelector('.rating-row');
 var picture = 0;
 
 $right.addEventListener('click', nextImg);
@@ -32,6 +34,8 @@ $reviewForm.addEventListener('submit', reviewPhoto);
 $profile.addEventListener('click', handleViewSwitch);
 $mainView.addEventListener('click', handleViewSwitch);
 $dropdown.addEventListener('change', profileView);
+window.addEventListener('DOMContentLoaded', appendReviewEntry);
+
 function handleViewSwitch(event) {
   var viewName = event.target.getAttribute('data-view');
   switchViews(viewName);
@@ -45,7 +49,6 @@ function switchViews(string) {
       $dataView[i].classList.remove('hidden');
       data.view = string;
     }
-
   }
 }
 switchViews(data.view);
@@ -70,11 +73,49 @@ function profileView(event) {
   }
 }
 
-// function renderReviews {
-//   var li = document.createElement('li');
-//   li.setAttribute()
-//   return li;
-// }
+function renderReviews(review) {
+  // debugger;
+  var li = document.createElement('li');
+  li.setAttribute('class', 'review-display');
+  var img = document.createElement('img');
+  img.setAttribute('class', 'reviewImg');
+  img.setAttribute('src', data.response[review.picture].download_url);
+  // console.log(review.picture);
+  li.appendChild(img);
+  var title = document.createElement('h2');
+  title.setAttribute('class', 'render-title');
+  var titleText = document.createTextNode(review.title);
+  title.appendChild(titleText);
+  li.appendChild(title);
+  var reviews = document.createElement('h3');
+  reviews.setAttribute('class', 'render-text');
+  var reviewText = document.createTextNode(review.reviewText);
+  reviews.appendChild(reviewText);
+  li.appendChild(reviews);
+  return li;
+}
+
+function renderRatings(rating) {
+  // debugger;
+  var li = document.createElement('li');
+  li.setAttribute('class', 'rating');
+  var img = document.createElement('img');
+  img.setAttribute('class', 'reviewImg');
+  img.setAttribute('src', data.response[rating.picture].download_url);
+  li.appendChild(img);
+  var stars = rating.rating;
+  li.appendChild(stars);
+  return li;
+}
+
+function appendReviewEntry(event) {
+  for (var i = data.reviews.length - 1; i >= 0; i--) {
+    renderReview.appendChild(renderReviews(data.reviews[i]));
+  }
+  for (var j = data.ratings.length - 1; j >= 0; j--) {
+    renderRating.appendChild(renderRatings(data.reviews[j]));
+  }
+}
 
 function getImages() {
   var xhr = new XMLHttpRequest();
@@ -160,7 +201,7 @@ function reviewPhoto(event) {
   event.preventDefault();
   var newReview = {
     title: title.value,
-    review: text.value,
+    reviewText: text.value,
     picture: picture
   };
   newReview.reviewId = data.nextReviewId;

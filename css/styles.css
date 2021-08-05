@@ -2,11 +2,39 @@ body {
   background-color: #222831;
 }
 
+ul {
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.reviewImg {
+  height: 60%;
+  padding: 1rem;
+}
+
 .review-display,
 .rating {
   background-color: #30475e;
   border-radius: 5px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.render-title {
+  font-family: 'Proza Libre', sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-left: 1rem;
+}
+
+.render-text {
+  font-family: 'Proza Libre', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  margin-left: 1rem;
 }
 
 .hidden {

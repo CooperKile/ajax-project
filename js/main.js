@@ -35,6 +35,7 @@ $profile.addEventListener('click', handleViewSwitch);
 $mainView.addEventListener('click', handleViewSwitch);
 $dropdown.addEventListener('change', profileView);
 window.addEventListener('DOMContentLoaded', appendReviewEntry);
+window.addEventListener('DOMContentLoaded', appendRatingEntry);
 
 function handleViewSwitch(event) {
   var viewName = event.target.getAttribute('data-view');
@@ -80,7 +81,6 @@ function renderReviews(review) {
   var img = document.createElement('img');
   img.setAttribute('class', 'reviewImg');
   img.setAttribute('src', data.response[review.picture].download_url);
-  // console.log(review.picture);
   li.appendChild(img);
   var title = document.createElement('h2');
   title.setAttribute('class', 'render-title');
@@ -96,15 +96,15 @@ function renderReviews(review) {
 }
 
 function renderRatings(rating) {
-  // debugger;
   var li = document.createElement('li');
   li.setAttribute('class', 'rating');
   var img = document.createElement('img');
-  img.setAttribute('class', 'reviewImg');
-  img.setAttribute('src', data.response[rating.picture].download_url);
+  img.setAttribute('class', 'ratingImg');
+  img.setAttribute('src', data.response[rating.ratePicture].download_url);
   li.appendChild(img);
-  var stars = rating.rating;
-  li.appendChild(stars);
+  // var ratingParse = JSON.parse(rating.rating);
+  // console.log(ratingParse);
+  // var numberOfStars = ratingParse;
   return li;
 }
 
@@ -112,6 +112,9 @@ function appendReviewEntry(event) {
   for (var i = data.reviews.length - 1; i >= 0; i--) {
     renderReview.appendChild(renderReviews(data.reviews[i]));
   }
+}
+
+function appendRatingEntry(event) {
   for (var j = data.ratings.length - 1; j >= 0; j--) {
     renderRating.appendChild(renderRatings(data.reviews[j]));
   }
@@ -189,8 +192,8 @@ function rateStars(event) {
 
 function ratePhoto() {
   var newRating = {
-    rating: data.currentRating,
-    picture: data.currentPicture
+    ratingValue: data.currentRating,
+    ratePicture: data.currentPicture
   };
   data.ratings.push(newRating);
   newRating.rateId = data.nextRateId;

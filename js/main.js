@@ -116,7 +116,7 @@ function appendReviewEntry(event) {
 
 function appendRatingEntry(event) {
   for (var j = data.ratings.length - 1; j >= 0; j--) {
-    renderRating.appendChild(renderRatings(data.reviews[j]));
+    renderRating.appendChild(renderRatings(data.ratings[j]));
   }
 }
 

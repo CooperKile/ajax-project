@@ -102,9 +102,11 @@ function renderRatings(rating) {
   img.setAttribute('class', 'ratingImg');
   img.setAttribute('src', data.response[rating.ratePicture].download_url);
   li.appendChild(img);
-  // var ratingParse = JSON.parse(rating.rating);
-  // console.log(ratingParse);
-  // var numberOfStars = ratingParse;
+  var numberOfStars = JSON.parse(rating.ratingValue);
+  var starSolid = document.createElement('i');
+  starSolid.setAttribute('class', 'modal-star star fas fa-star');
+  starSolid.of(numberOfStars + 1);
+  li.appendChild(starSolid);
   return li;
 }
 
